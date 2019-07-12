@@ -43,6 +43,9 @@
     <Reference Include="Autofac, Version=4.8.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.8.0\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -65,10 +68,20 @@
     <Compile Include="Migrations\201805190719490_InitialCreate.Designer.cs">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907122040312_AddCategoryDescription.cs" />
+    <Compile Include="Migrations\201907122040312_AddCategoryDescription.Designer.cs">
+      <DependentUpon>201907122040312_AddCategoryDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907122042559_AddCategoryDescription1.cs" />
+    <Compile Include="Migrations\201907122042559_AddCategoryDescription1.Designer.cs">
+      <DependentUpon>201907122042559_AddCategoryDescription1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
@@ -77,6 +90,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805190719490_InitialCreate.resx">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907122040312_AddCategoryDescription.resx">
+      <DependentUpon>201907122040312_AddCategoryDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907122042559_AddCategoryDescription1.resx">
+      <DependentUpon>201907122042559_AddCategoryDescription1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
