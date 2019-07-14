@@ -1,7 +1,7 @@
-﻿using FluentValidation;
-
-namespace KatlaSport.Services.HiveManagement
+﻿namespace KatlaSport.Services.HiveManagement
 {
+    using FluentValidation;
+
     /// <summary>
     /// Represents a validator for <see cref="UpdateHiveRequestValidator"/>
     /// </summary>
