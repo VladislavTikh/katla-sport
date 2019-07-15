@@ -5,6 +5,6 @@ export class Hive {
         public code: string,
         public address: string,
         public isDeleted: boolean,
-        public lastUpdated: string
+        public lastUpdated: string,
     ) { }
 }
