@@ -20,7 +20,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         public void GetAmount_EmptySet_ZeroReturned()
         {
             var context = new Mock<ICustomerContext>();
-            context.Setup(c => c.Customers).ReturnsEntitySet(new Customer[0]);
+            context.Setup(c => c.Customers).ReturnsEntitySet(new StoreCustomer[0]);
             var service = new CustomerManagementService(context.Object);
 
             var amount = service.GetAmount();
@@ -32,7 +32,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         public void GetAmount_SetWithTwoElements_TwoReturned()
         {
             var context = new Mock<ICustomerContext>();
-            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { new Customer(), new Customer() });
+            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { new StoreCustomer(), new StoreCustomer() });
             var service = new CustomerManagementService(context.Object);
 
             var amount = service.GetAmount();
@@ -44,7 +44,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         public void GetBriefInfo_EmptySet_EmptyListReturned()
         {
             var context = new Mock<ICustomerContext>();
-            context.Setup(c => c.Customers).ReturnsEntitySet(new Customer[0]);
+            context.Setup(c => c.Customers).ReturnsEntitySet(new StoreCustomer[0]);
             var service = new CustomerManagementService(context.Object);
 
             var list = service.GetBriefInfo(0, 0);
@@ -55,17 +55,17 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [Fact]
         public void GetBriefInfo_SetWithFourElements_TwoElementsListReturned()
         {
-            var firstCustomer = new Customer
+            var firstCustomer = new StoreCustomer
             {
                 Id = 1
             };
-            var secondCustomer = new Customer
+            var secondCustomer = new StoreCustomer
             {
                 Id = 2
             };
 
             var context = new Mock<ICustomerContext>();
-            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { firstCustomer, secondCustomer, new Customer(), new Customer() });
+            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { firstCustomer, secondCustomer, new StoreCustomer(), new StoreCustomer() });
             var service = new CustomerManagementService(context.Object);
 
             var list = service.GetBriefInfo(0, 2);
@@ -78,17 +78,17 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [Fact]
         public void GetBriefInfo_SetWithFourElementsGetLastTwo_LastTwoElementsListReturned()
         {
-            var thirdCustomer = new Customer
+            var thirdCustomer = new StoreCustomer
             {
                 Id = 3
             };
-            var fourthCustomer = new Customer
+            var fourthCustomer = new StoreCustomer
             {
                 Id = 4
             };
 
             var context = new Mock<ICustomerContext>();
-            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { new Customer(), new Customer(), thirdCustomer, fourthCustomer });
+            context.Setup(c => c.Customers).ReturnsEntitySet(new[] { new StoreCustomer(), new StoreCustomer(), thirdCustomer, fourthCustomer });
             var service = new CustomerManagementService(context.Object);
 
             var list = service.GetBriefInfo(2, 2);
@@ -113,19 +113,19 @@ namespace KatlaSport.Services.Tests.CustomerManagement
             var context = new Mock<ICustomerContext>();
             context.Setup(c => c.Customers).ReturnsEntitySet(new[]
             {
-                new Customer
+                new StoreCustomer
                 {
                     Id = 1
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 2
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 3
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 4
                 }
@@ -145,19 +145,19 @@ namespace KatlaSport.Services.Tests.CustomerManagement
             var context = new Mock<ICustomerContext>();
             context.Setup(c => c.Customers).ReturnsEntitySet(new[]
             {
-                new Customer
+                new StoreCustomer
                 {
                     Id = 1
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 2
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 3
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 4
                 }

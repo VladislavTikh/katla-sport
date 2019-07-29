@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace KatlaSport.DataAccess.ProductStoreHive
+﻿namespace KatlaSport.DataAccess.ProductStoreHive
 {
+    using System;
+    using System.Collections.Generic;
+    using KatlaSport.DataAccess.EmployeeCatalogue;
+
     /// <summary>
     /// Gets or sets a store hive.
     /// </summary>
@@ -57,5 +58,10 @@ namespace KatlaSport.DataAccess.ProductStoreHive
         /// Gets or sets a collection of sections for the store hive.
         /// </summary>
         public virtual ICollection<StoreHiveSection> Sections { get; set; }
+
+        /// <summary>
+        /// Gets or sets a collection of employees for the store hive.
+        /// </summary>
+        public virtual ICollection<StoreEmployee> Employees { get; set; }
     }
 }

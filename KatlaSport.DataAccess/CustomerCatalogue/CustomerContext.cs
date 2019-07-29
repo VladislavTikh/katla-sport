@@ -7,6 +7,6 @@
         {
         }
 
-        public IEntitySet<Customer> Customers => GetDbSet<Customer>();
+        public IEntitySet<StoreCustomer> Customers => GetDbSet<StoreCustomer>();
     }
 }

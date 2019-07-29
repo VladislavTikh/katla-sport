@@ -5,7 +5,7 @@
     /// <summary>
     /// Represents a validator for <see cref="UpdateHiveSectionRequest"/>
     /// </summary>
-    public class UpdateHiveSectionRequestValidator :AbstractValidator<UpdateHiveSectionRequest>
+    public class UpdateHiveSectionRequestValidator : AbstractValidator<UpdateHiveSectionRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateHiveSectionRequestValidator"/> class.

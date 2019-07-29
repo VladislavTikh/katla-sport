@@ -1,8 +1,10 @@
-﻿using KatlaSport.DataAccess.ProductCatalogue;
-using KatlaSport.DataAccess.ProductStoreHive;
-
-namespace KatlaSport.DataAccess.ProductStore
+﻿namespace KatlaSport.DataAccess.ProductStore
 {
+    using System.Collections.Generic;
+    using KatlaSport.DataAccess.OrderCatalogue;
+    using KatlaSport.DataAccess.ProductCatalogue;
+    using KatlaSport.DataAccess.ProductStoreHive;
+
     /// <summary>
     /// Represents a product store item.
     /// </summary>
@@ -37,5 +39,10 @@ namespace KatlaSport.DataAccess.ProductStore
         /// Gets or sets a quantity of items of certain product in the location.
         /// </summary>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Gets or sets collection of order details
+        /// </summary>
+        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
     }
 }

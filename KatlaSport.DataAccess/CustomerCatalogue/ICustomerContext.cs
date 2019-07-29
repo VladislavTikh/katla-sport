@@ -6,8 +6,8 @@
     public interface ICustomerContext
     {
         /// <summary>
-        /// Gets a set of <see cref="Customer"/> entities.
+        /// Gets a set of <see cref="StoreCustomer"/> entities.
         /// </summary>
-        IEntitySet<Customer> Customers { get; }
+        IEntitySet<StoreCustomer> Customers { get; }
     }
 }

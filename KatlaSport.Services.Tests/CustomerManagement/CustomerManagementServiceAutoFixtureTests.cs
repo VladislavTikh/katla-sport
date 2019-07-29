@@ -16,7 +16,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetAmount_EmptySet_ZeroReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service)
         {
-            context.Setup(c => c.Customers).ReturnsEntitySet(new Customer[] { });
+            context.Setup(c => c.Customers).ReturnsEntitySet(new StoreCustomer[] { });
 
             var amount = service.GetAmount();
 
@@ -27,7 +27,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetAmount_SetWithTwoElements_TwoReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service, IFixture fixture)
         {
-            var customers = fixture.CreateMany<Customer>(10).ToArray();
+            var customers = fixture.CreateMany<StoreCustomer>(10).ToArray();
             context.Setup(c => c.Customers).ReturnsEntitySet(customers);
 
             var amount = service.GetAmount();
@@ -39,7 +39,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetBriefInfo_EmptySet_EmptyListReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service)
         {
-            context.Setup(c => c.Customers).ReturnsEntitySet(new Customer[] { });
+            context.Setup(c => c.Customers).ReturnsEntitySet(new StoreCustomer[] { });
 
             var list = service.GetBriefInfo(0, 0);
 
@@ -50,7 +50,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetBriefInfo_SetWithFourElements_TwoElementsListReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service, IFixture fixture)
         {
-            var customers = fixture.CreateMany<Customer>(4).ToArray();
+            var customers = fixture.CreateMany<StoreCustomer>(4).ToArray();
             context.Setup(c => c.Customers).ReturnsEntitySet(customers);
 
             var list = service.GetBriefInfo(0, 2);
@@ -64,7 +64,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetBriefInfo_SetWithFourElementsGetLastTwo_LastTwoElementsListReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service, IFixture fixture)
         {
-            var customers = fixture.CreateMany<Customer>(4).ToArray();
+            var customers = fixture.CreateMany<StoreCustomer>(4).ToArray();
             context.Setup(c => c.Customers).ReturnsEntitySet(customers);
 
             var list = service.GetBriefInfo(2, 2);
@@ -85,7 +85,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetFullInfo_OneId_OneElementListReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service, IFixture fixture)
         {
-            var customers = fixture.CreateMany<Customer>(4).ToArray();
+            var customers = fixture.CreateMany<StoreCustomer>(4).ToArray();
             context.Setup(c => c.Customers).ReturnsEntitySet(customers);
 
             var list = service.GetFullInfo(new[] { customers[1].Id });
@@ -98,7 +98,7 @@ namespace KatlaSport.Services.Tests.CustomerManagement
         [AutoMoqData]
         public void GetFullInfo_TwoIds_TwoElementsListReturned([Frozen] Mock<ICustomerContext> context, CustomerManagementService service, IFixture fixture)
         {
-            var customers = fixture.CreateMany<Customer>(4).ToArray();
+            var customers = fixture.CreateMany<StoreCustomer>(4).ToArray();
             context.Setup(c => c.Customers).ReturnsEntitySet(customers);
 
             var list = service.GetFullInfo(new[] { customers[1].Id, customers[3].Id });

@@ -14,11 +14,15 @@ namespace KatlaSport.WebApi
         /// </summary>
         public static void Configure()
         {
+#pragma warning disable CS0618 // Тип или член устарел
             Mapper.Initialize(cfg =>
             {
                 var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("KatlaSport")).ToArray();
+#pragma warning disable CS0618 // Тип или член устарел
                 cfg.AddProfiles(assemblies);
+#pragma warning restore CS0618 // Тип или член устарел
             });
+#pragma warning restore CS0618 // Тип или член устарел
         }
     }
 }

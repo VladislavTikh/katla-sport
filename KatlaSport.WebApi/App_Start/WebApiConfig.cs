@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace KatlaSport.WebApi
 {
@@ -6,7 +7,7 @@ namespace KatlaSport.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors();
+            config.EnableCors(new EnableCorsAttribute("http://localhost:4200",headers:"*",methods:"*"));
             // Web API configuration and services
             //config.AddApiVersioning();
 

@@ -1,7 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Reflection;
 using KatlaSport.DataAccess.CustomerCatalogue;
+using KatlaSport.DataAccess.EmployeeCatalogue;
 using KatlaSport.DataAccess.Migrations;
+using KatlaSport.DataAccess.OrderCatalogue;
 using KatlaSport.DataAccess.ProductCatalogue;
 using KatlaSport.DataAccess.ProductStore;
 using KatlaSport.DataAccess.ProductStoreHive;
@@ -65,9 +67,24 @@ namespace KatlaSport.DataAccess
         public DbSet<StoreHiveSectionCategory> SectionCategories { get; set; }
 
         /// <summary>
-        /// Gets or sets a <see cref="DbSet"/> for <see cref="Customer"/>.
+        /// Gets or sets a <see cref="DbSet"/> for <see cref="StoreCustomer"/>.
         /// </summary>
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<StoreCustomer> Customers { get; set; }
+
+        /// <summary>
+        /// Gets or sets a <see cref="DbSet"/> for <see cref="StoreEmployee"/>.
+        /// </summary>
+        public DbSet<StoreEmployee> Employees { get; set; }
+
+        /// <summary>
+        /// Gets or sets a <see cref="DbSet"/> for <see cref="StoreOrder"/>.
+        /// </summary>
+        public DbSet<StoreOrder> Orders { get; set; }
+
+        /// <summary>
+        /// Gets or sets a <see cref="DbSet"/> for <see cref="OrderDetails"/>.
+        /// </summary>
+        public DbSet<OrderDetails> OrderDetails { get; set; }
 
         /// <summary>
         /// Overrides base method.

@@ -1,9 +1,12 @@
 ﻿namespace KatlaSport.DataAccess.CustomerCatalogue
 {
+    using System.Collections.Generic;
+    using KatlaSport.DataAccess.OrderCatalogue;
+
     /// <summary>
     /// Represents a customer.
     /// </summary>
-    public class Customer
+    public class StoreCustomer
     {
         /// <summary>
         /// Gets or sets a customer ID.
@@ -24,5 +27,10 @@
         /// Gets or sets a customer phone.
         /// </summary>
         public string Phone { get; set; }
+
+        /// <summary>
+        /// Gets or sets orders.
+        /// </summary>
+        public virtual ICollection<StoreOrder> Orders { get; set; }
     }
 }

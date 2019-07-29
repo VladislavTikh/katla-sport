@@ -368,28 +368,28 @@ namespace KatlaSport.DataAccess.Migrations
 
             context.Customers.AddOrUpdate(
                 i => i.Id,
-                new Customer
+                new StoreCustomer
                 {
                     Id = 1,
                     Name = "Oleg Alexandrov",
                     Address = "Minsk, Goretskogo-31",
                     Phone = "+37529-4345834"
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 2,
                     Name = "Gleb Pavlov",
                     Address = "Minsk, Cechota-21",
                     Phone = "+37529-3282943"
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 3,
                     Name = "Sergey Tatarinov",
                     Address = "Borisov, 100 let BSSR",
                     Phone = "+37529-9834782"
                 },
-                new Customer
+                new StoreCustomer
                 {
                     Id = 4,
                     Name = "Alexander Alexandrov",

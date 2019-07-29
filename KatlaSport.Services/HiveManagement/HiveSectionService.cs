@@ -96,7 +96,7 @@ namespace KatlaSport.Services.HiveManagement
 
         public async Task<HiveSection> UpdateHiveSectionAsync(int hiveSectionId, UpdateHiveSectionRequest updateRequest)
         {
-            var dbHiveSections=await _context.Sections.Where(p => p.Code == updateRequest.Code && p.Id != hiveSectionId).ToArrayAsync();
+            var dbHiveSections = await _context.Sections.Where(p => p.Code == updateRequest.Code && p.Id != hiveSectionId).ToArrayAsync();
             if (dbHiveSections.Length > 0)
             {
                 throw new RequestedResourceHasConflictException("code");
